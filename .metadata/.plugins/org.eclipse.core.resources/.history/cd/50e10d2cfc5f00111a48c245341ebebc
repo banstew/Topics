@@ -1,0 +1,53 @@
+package lastTerm;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LastTerm {
+
+	public static void main(String[] args){
+
+
+		try {
+			FileReader fr = new FileReader("src/wallWalker/test.txt");
+
+			Scanner scan = new Scanner(fr);
+
+			ArrayList<Integer> numbers = new ArrayList<Integer>();
+			String input = scan.next();
+			int inputInt = Integer.parseInt(input);
+			int caseNumber =1;
+			while (!input.equals(0)){
+				if (inputInt>2000){ //if the input is greater than 2000, shout
+					System.out.println("input number is too large:" + inputInt + "\n");
+				}
+				if (inputInt<0){ //if the input is negative, shout
+					System.out.println("your input was: " + inputInt + ", negative numbers are not allowed \n");
+				}
+				numbers.add(inputInt);
+				int factor = 2;
+				int factorValue = 0;
+				factorValue+=1;
+				factorValue+=inputInt;
+				while (factor<inputInt){
+					if (inputInt%factor==0){
+						while (factor>10){
+							factorValue += factor%10;
+							factor = factor%10;
+						}
+						factorValue+=factor;
+					}
+					factor++;
+				}
+				//HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+				System.out.println("Case "+ caseNumber+ ": " + inputInt + ", factor value:" + factorValue);
+				caseNumber++;
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

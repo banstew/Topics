@@ -1,0 +1,146 @@
+package romanPalindromes;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class RomanPalindromes {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			FileReader fr = new FileReader("src/romanPalindromes/test.txt");
+			Scanner scan = new Scanner(fr);
+			
+			String input = scan.next();
+			StringBuffer sb = new StringBuffer(input);
+			StringBuffer palindrome = sb.reverse();
+			palindrome.append(sb);
+			
+			int caseNumber = 1;
+			int sum = 0;
+			int I = 1;
+			int V = 5;
+			int X = 10;
+			int L = 50;
+			int C = 100;
+			int D = 500;
+			int M = 1000;
+			
+			System.out.println(I-V);
+			
+			/*while(palindrome.length()>1){
+				
+				if(palindrome.substring(0,1).equals("IV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("IX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("IL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("IC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("ID")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("IM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MI")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("ML")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DM")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("II")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("VV")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("XX")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("LL")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("CC")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("DD")){
+					
+				}else if(palindrome.substring(0,1).equalsIgnoreCase("MM")){
+					
+				}
+			}*/
+			System.out.println("Case "+ caseNumber+ ": total = " + sum + "\n");
+			caseNumber++;
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package romanPalindromes;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class RomanPalindromes {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			FileReader fr = new FileReader("src/romanPalindromes/test.txt");
+			Scanner scan = new Scanner(fr);
+			
+			String input = scan.next();
+			StringBuffer sb = new StringBuffer(input);
+			StringBuffer reverse = sb.reverse();
+			reverse.append(sb);
+			
+			int caseNumber = 1;
+			int sum = 0;
+			while(reverse.length()>1){
+				
+				
+			}
+			System.out.println("Case "+ caseNumber+ ": total = " + sum + "\n");
+			caseNumber++;
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

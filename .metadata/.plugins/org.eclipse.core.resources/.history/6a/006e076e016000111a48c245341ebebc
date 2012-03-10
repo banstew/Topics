@@ -1,0 +1,61 @@
+package lastTerm;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LastTerm {
+
+	public static void main(String[] args){
+
+
+		try {
+			FileReader fr = new FileReader("src/lastTerm/test.txt");
+
+			Scanner scan = new Scanner(fr);
+
+			ArrayList<Integer> numbers = new ArrayList<Integer>();
+			String input = scan.next();
+			int inputInt = Integer.parseInt(input);
+			int caseNumber =1;
+			while (!(inputInt==0)){
+				if (inputInt>2000){ //if the input is greater than 2000, shout
+					System.out.println("input number is too large:" + inputInt + "\n");
+					input = scan.next();
+					inputInt = Integer.parseInt(input);
+				}else if (inputInt<0){ //if the input is negative, shout
+					System.out.println("your input was: " + inputInt + ", negative numbers are not allowed \n");
+					input = scan.next();
+					inputInt = Integer.parseInt(input);
+				}else{
+					numbers.add(inputInt);
+					int factor = 1;
+					int factorValue = 0;
+					while (factor<=inputInt){
+						if (inputInt%factor==0){
+							if (factor>10){
+								int tmpFactor = factor;
+								while (tmpFactor>=1){
+									factorValue += tmpFactor%10;
+									tmpFactor = tmpFactor/10;
+								}
+							}else{
+								factorValue+=factor;
+							}
+						}
+						factor++;
+					}
+					//HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					System.out.println("Case "+ caseNumber+ ": " + inputInt + ", factor value:" + factorValue);
+					caseNumber++;
+					input = scan.next();
+					inputInt = Integer.parseInt(input);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

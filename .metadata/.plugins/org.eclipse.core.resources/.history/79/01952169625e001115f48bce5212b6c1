@@ -1,0 +1,30 @@
+package lastTerm;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LastTerm {
+
+	public static void main(String[] args){
+
+
+		try {
+			FileReader fr = new FileReader("src/wallWalker/test.txt");
+
+			Scanner scan = new Scanner(fr);
+
+			ArrayList<String> numbers = new ArrayList<String>();
+			String input = scan.next();
+			while (!input.equals(0)){
+				if (Integer.parseInt(input)>2000){
+					System.out.println("input number is too large");
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

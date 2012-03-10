@@ -1,0 +1,24 @@
+package romanPalindromes;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class RomanPalindromes {
+
+	public static void main(String[] args) {
+		
+		FileReader fr;
+		
+		try {
+			fr = new FileReader("src/lastTerm/test.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		Scanner scan = new Scanner(fr);
+
+	}
+
+}

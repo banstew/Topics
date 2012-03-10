@@ -1,0 +1,59 @@
+package romanPalindromes;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class RomanPalindromes {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try {
+			FileReader fr = new FileReader("src/romanPalindromes/test.txt");
+			Scanner scan = new Scanner(fr);
+
+			String input = scan.next();
+			StringBuffer sb = new StringBuffer(input);
+			StringBuffer palindrome = sb.reverse();
+			palindrome.append(sb);
+
+			int caseNumber = 1;
+			int sum = 0;
+
+			HashMap<String, Integer> romans = new HashMap<String, Integer>();
+			romans.put("I", 1);
+			romans.put("V", 5);
+			romans.put("X", 10);
+			romans.put("L", 50);
+			romans.put("C", 100);
+			romans.put("D", 500);
+			romans.put("M", 1000);
+
+			while(!input.equals(0)){
+				while(palindrome.length()>1){
+					int first = romans.get(palindrome.charAt(0));
+					int second = romans.get(palindrome.charAt(1));
+
+					if (first>=second){
+						sum += first+second;
+					}else{
+						sum += first-second;
+					}
+					palindrome.subSequence(1, palindrome.length());
+
+				}
+				System.out.println("Case "+ caseNumber+ ": total = " + sum + "\n");
+				caseNumber++;
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+
+	}
+
+}

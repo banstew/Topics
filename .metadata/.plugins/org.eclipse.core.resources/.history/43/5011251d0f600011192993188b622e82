@@ -1,0 +1,89 @@
+package lastTerm;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class LastTerm {
+
+	public static void main(String[] args){
+
+
+		try {
+			FileReader fr = new FileReader("src/lastTerm/test.txt");
+
+			Scanner scan = new Scanner(fr);
+
+			HashMap<Integer, Integer> numbers = new HashMap<Integer, Integer>();
+			HashMap<Integer, Integer> sequence = new HashMap<Integer, Integer>();
+			String input = scan.next();
+			int inputInt = Integer.parseInt(input);
+			int caseNumber =1;
+			int terms = 0;
+			while (!(inputInt==0)){//inputInt=0 is the exit condition
+				if (inputInt>2000){ //if the input is greater than 2000, shout
+					System.out.println("input number is too large:" + inputInt + "\n");
+					input = scan.next();
+					inputInt = Integer.parseInt(input);
+				}else if (inputInt<0){ //if the input is negative, shout
+					System.out.println("your input was: " + inputInt + ", negative numbers are not allowed \n");
+					input = scan.next();
+					inputInt = Integer.parseInt(input);
+				}else if (numbers.containsKey(inputInt)){//if numbers is not empty and contains input int as a key
+					inputInt = numbers.get(inputInt);
+					terms++;
+					if(!sequence.containsKey(inputInt)){//if inputInt is not the last term of the DDF
+						sequence.put(inputInt, numbers.get(inputInt));
+						inputInt = numbers.get(inputInt);
+					}else{// if inputInt is the last term of the DDF
+						sequence = new HashMap<Integer, Integer>();
+						System.out.println("Case "+ caseNumber+ ": " + terms + " terms \n");
+						terms = 0;
+						caseNumber++;
+						input = scan.next();
+						inputInt = Integer.parseInt(input);
+					}
+					
+				}else{
+					int factor = 1;
+					int factorValue = 0;
+					while (factor<=inputInt){
+						if (inputInt%factor==0){
+							if (factor>10){
+								int tmpFactor = factor;
+								while (tmpFactor>=1){
+									factorValue += tmpFactor%10;
+									System.out.println(">>"+tmpFactor%10);
+									tmpFactor = tmpFactor/10;
+								}
+							}else{
+								factorValue+=factor;
+							}
+						}
+						factor++;
+					}
+					System.out.println(">"+inputInt+ " factor Value "+factorValue);
+					terms++;
+					if(!sequence.containsKey(inputInt)&&inputInt!=factorValue){
+						numbers.put(inputInt, factorValue);
+						sequence.put(inputInt, factorValue);
+						inputInt = factorValue;
+					}else{
+						sequence = new HashMap<Integer, Integer>();
+						numbers.put(inputInt, factorValue);
+						System.out.println("Case "+ caseNumber+ ": " + terms + " terms \n");
+						terms = 0;
+						caseNumber++;
+						input = scan.next();
+						inputInt = Integer.parseInt(input);
+					}
+				}
+			}
+			System.out.println("exit");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

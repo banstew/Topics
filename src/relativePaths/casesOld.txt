@@ -1,0 +1,20 @@
+Case 1: P==C 
+			=> '.'
+
+Case 2: P<C 
+	(P absolute)
+		!diffDir => ..		P=/a	C=/a/b
+		diffDir => ../../a	P=/a	C=/b/c
+	
+	(P !absolute)
+		!diffDir => ..		P=a		C=/a/b
+		diffDir => a		P=a		C=/b/c
+		
+Case 3: P>C
+	(P absolute)
+		!diffDir => ..		P=/a/b	C=/a
+		diffDir => ../a/b	P=/a/b	C=/c
+		
+	(P !absolute)
+		!diffDir => ..		P=a/b	C=/a
+		diffDir => a/b		P=a/b	C=/c

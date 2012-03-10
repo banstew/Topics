@@ -1,0 +1,51 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.ui.workbench.texteditor,3.7.0.v20110505-0800,"org.eclipse.ui.workbench.texteditor",1330228560945
+started,bundle,org.eclipse.update.configurator,3.3.100.v20100512,"org.eclipse.update.configurator",1330228560945
+started,bundle,org.eclipse.update.core,3.2.500.v20110330,"org.eclipse.update.core",1330228561039
+started,bundle,org.eclipse.update.scheduler,3.2.300.v20100512,"org.eclipse.update.scheduler",1330228561039
+started,bundle,org.eclipse.wb.core,1.1.0.r37x201109091012,"org.eclipse.wb.core",1330228561039
+started,bundle,org.eclipse.wb.core.lib,1.1.0.r37x201109091012,"org.eclipse.wb.core.lib",1330228561054
+started,bundle,org.eclipse.wb.discovery.core,1.1.0.r37x201109091028,"org.eclipse.wb.discovery.core",1330228561054
+os,sysinfo,,,"win32",1330228561070
+arch,sysinfo,,,"x86_64",1330228561070
+ws,sysinfo,,,"win32",1330228561070
+locale,sysinfo,,,"en_US",1330228561070
+processors,sysinfo,,,"4",1330228561070
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1330228561070
+java.runtime.version,sysinfo,,,"1.6.0_24-b07",1330228561070
+java.specification.name,sysinfo,,,"Java Platform API Specification",1330228561070
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1330228561070
+java.specification.version,sysinfo,,,"1.6",1330228561070
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1330228561070
+java.version,sysinfo,,,"1.6.0_24",1330228561070
+java.vm.info,sysinfo,,,"mixed mode",1330228561070
+java.vm.name,sysinfo,,,"Java HotSpot(TM) 64-Bit Server VM",1330228561070
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1330228561070
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1330228561070
+java.vm.specification.version,sysinfo,,,"1.0",1330228561070
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1330228561070
+java.vm.version,sysinfo,,,"19.1-b02",1330228561070
+started,bundle,org.eclipse.m2e.usagedata,1.0.100.20110804-1717,"org.eclipse.m2e.usagedata",1330228561351
+started,bundle,org.eclipse.wb.discovery.ui,1.1.0.r37x201109091028,"org.eclipse.wb.discovery.ui",1330228561647
+started,bundle,org.eclipse.team.cvs.core,3.3.400.I20110510-0800,"org.eclipse.team.cvs.core",1330228562458
+started,bundle,com.android.ide.eclipse.ddms,15.0.0.v201110251216-213216,"com.android.ide.eclipse.ddms",1330228562817
+started,bundle,org.eclipse.team.cvs.ui,3.3.400.I20110510-0800,"org.eclipse.team.cvs.ui",1330228563223
+started,bundle,org.eclipse.wst.sse.core,1.1.601.v201108151912,"org.eclipse.wst.sse.core",1330228563722
+started,bundle,com.android.ide.eclipse.adt,15.0.0.v201110251216-213216,"com.android.ide.eclipse.adt",1330228564159
+started,bundle,com.android.ide.eclipse.traceview,15.0.0.v201110251216-213216,"com.android.ide.eclipse.traceview",1330228564907
+opened,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228664966
+activated,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228665075
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1330228674186
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1330228679755
+activated,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228834398
+started,bundle,org.eclipse.debug.ui,3.7.101.v20110817_r371,"org.eclipse.debug.ui",1330228839983
+started,bundle,org.eclipse.jdt.debug,3.7.1.v20110802_r371,"org.eclipse.jdt.debug",1330228840295
+started,bundle,org.eclipse.jdt.debug.ui,3.6.1.v20110803_r371,"org.eclipse.jdt.debug.ui",1330228840576
+started,bundle,org.eclipse.m2e.launching,1.0.100.20110804-1717,"org.eclipse.m2e.launching",1330228841106
+activated,view,org.eclipse.ui.console,3.5.100.v20110511,"org.eclipse.ui.console.ConsoleView",1330228841434
+activated,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228846160
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1330228846363
+activated,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228849780
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1330228854007
+activated,editor,org.eclipse.ui.editors,3.7.0.v20110517-0800,"org.eclipse.ui.DefaultTextEditor",1330228869592
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1330228889606

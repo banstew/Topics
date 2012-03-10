@@ -1,0 +1,9 @@
+Case 1: P==C 
+			=> '.'
+
+Case 2: P absolute
+		=> ../*(c.size())/p.getAll()		P=/a	C=/a/b
+	
+Case 3: P !absolute
+		=> P		P=a		C=/b/c
+		
