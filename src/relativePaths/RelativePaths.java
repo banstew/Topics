@@ -22,7 +22,7 @@ public class RelativePaths {
 	static int caseNumber = 1;
 	static String p;
 	static String c;
-	static String s = "";
+	static StringBuffer s = new StringBuffer();
 	static ArrayList<String> givenArray = new ArrayList<String>(); //P
 	static ArrayList<String> currentArray = new ArrayList<String>(); //C
 
@@ -34,7 +34,7 @@ public class RelativePaths {
 			do{
 				c=scan.nextLine();
 				if(p.equals("")||c.equals("")||!c.startsWith("/")){	//if the input file starts with a new line or
-					break;											//there is a new line after p is given or C is not absolute
+					break;											//there is a new line after p is given or C is not absolute!
 				}
 
 				normalize();
@@ -46,7 +46,7 @@ public class RelativePaths {
 				}
 			}while(!p.equals(""));
 		}catch(FileNotFoundException e){
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 
@@ -73,7 +73,7 @@ public class RelativePaths {
 		if(currentArray.size()>1){
 			currentArray.remove(0);
 		}
-		while(givenArray.contains(".")||currentArray.contains(".")){ //remove all '.' from give array
+		while(givenArray.contains(".")||currentArray.contains(".")){ //remove all '.' from given array and current array
 			if(givenArray.contains(".")){
 				givenArray.remove(".");
 			}
@@ -83,34 +83,43 @@ public class RelativePaths {
 		}
 		int upDir=0;
 		while(givenArray.contains("..")){
-			if(givenArray.indexOf("..")==0){//if the .. is at the beginning of the path just remove it
+			if(givenArray.indexOf("..")==0){//if the .. is at the beginning of P and C is / just remove it
 				givenArray.remove(givenArray.indexOf(".."));
 			}else if(givenArray.indexOf("..")==1&&givenArray.size()==2){ 
 				givenArray.clear();
 			}else{//else remove the .. and the element before it
 				givenArray.subList(givenArray.indexOf("..")-1, givenArray.indexOf("..")+1).clear();
-				if (!p.startsWith("/")){
+				if(!p.startsWith("/")){
 					upDir++;
 				}
 			}
 		}
-		while(currentArray.contains("..")||upDir>0){
+ 		while(currentArray.contains("..")){
 			if(currentArray.indexOf("..")==0){//if the .. is at the beginning of the path just remove it
 				currentArray.remove(currentArray.indexOf(".."));
 			}else if(currentArray.indexOf("..")==1&&currentArray.size()==2){ 
 				currentArray.clear();
-			}else if (currentArray.contains("..")){//else remove the .. and the element before it
+			}else{//else remove the .. and the element before it
 				currentArray.subList(currentArray.indexOf("..")-1, currentArray.indexOf("..")+1).clear();
-			}else{
-				if(upDir<=currentArray.size()){
-					if(currentArray.size()>0&&!currentArray.get(currentArray.size()-upDir).equals(givenArray.get(0))){
-						givenArray.remove(currentArray.get(currentArray.size()-upDir-1));
-						currentArray.remove(currentArray.size()-upDir-1); 
-					}
+			}
+		}	
+		while(upDir>0){
+			if(upDir<=currentArray.size()){
+				if(givenArray.size()==0||currentArray.get(currentArray.size()-upDir).equals(givenArray.get(0))
+						||upDir==currentArray.size()&&!currentArray.get(0).equals(givenArray.get(0))){
+					upDir=0;
+				}else if(!currentArray.get(0).equals(givenArray.get(0))&&upDir<currentArray.size()){
+					currentArray.subList(upDir+1, currentArray.size()).clear();
+					upDir=0;
+				}else if(currentArray.size()>0&&!currentArray.get(currentArray.size()-upDir).equals(givenArray.get(0))){
+					givenArray.remove(currentArray.get(currentArray.size()-upDir-1));
+					currentArray.remove(currentArray.size()-upDir-1); 
 					upDir--;
 				}else{
 					upDir--;
 				}
+			}else{
+				upDir=currentArray.size();
 			}
 		}
 		while(!givenArray.isEmpty()&&!currentArray.isEmpty()&&
@@ -123,20 +132,20 @@ public class RelativePaths {
 	//////////////////////////////////////////////findS//////////////////////////////////////////////////////////////////////
 	private static void findS() { //computes the value of S
 		if(givenArray.isEmpty()&&currentArray.isEmpty()){ //if C and P are both the same after normalization
-			s=".";
+			s.append(".");
 		}else{
 			while(!currentArray.isEmpty()){
-				s+="..";
+				s.append("..");
 				currentArray.remove(0);
 				if (currentArray.size()+givenArray.size()!=0){ //if the item removed was not the last 
-					s+="/";
+					s.append("/");
 				}
 			}
 			while(!givenArray.isEmpty()){
-				s+=givenArray.get(0);
+				s.append(givenArray.get(0));
 				givenArray.remove(0);
 				if (givenArray.size()!=0){ //if the item removed was not the last 
-					s+="/";
+					s.append("/");
 				}
 			}
 		}
@@ -155,7 +164,7 @@ public class RelativePaths {
 
 	/////////////////////////////////////////////reset/////////////////////////////////////////////////////////////////////////////
 	private static void resetGlobals() {
-		s="";
+		s.delete(0, s.length()+1);
 		c="arbitrary non-empty string";
 		givenArray = new ArrayList<String>();
 		currentArray = new ArrayList<String>();

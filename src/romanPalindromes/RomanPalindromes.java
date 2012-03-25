@@ -69,25 +69,8 @@ public class RomanPalindromes {
 				}
 
 			}
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public StringBuffer refresh(String input){
-		
-		StringBuffer sb = new StringBuffer(input);
-		StringBuffer palindrome = new StringBuffer(input); 
-		if (input.length()%2==0){
-			palindrome.insert(0, sb.reverse());
-		}else{
-			palindrome.insert(0, sb.reverse());
-			palindrome.deleteCharAt(palindrome.length()/2);
-		}
-		
-		StringBuffer buffer = null;
-		return buffer;
-	}
-	
 }

@@ -68,7 +68,16 @@ is/the/endall
 /this
 /../a/b/../..
 /a/..
-
+../l/j
+/a/b/c
+/a
+/a/../b
+../../../../../a
+/a/b/c
+../../../../../l
+/a/b/c
+../../l/j
+/a/b/c
 doesnt/matter
 this
 
